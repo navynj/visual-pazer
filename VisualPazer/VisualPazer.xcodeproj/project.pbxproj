@@ -7,26 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E72F4F53266A8A6D008130E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4F52266A8A6D008130E9 /* AppDelegate.swift */; };
-		E72F4F55266A8A6D008130E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4F54266A8A6D008130E9 /* SceneDelegate.swift */; };
-		E72F4F57266A8A6D008130E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4F56266A8A6D008130E9 /* ViewController.swift */; };
-		E72F4F5A266A8A6D008130E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72F4F58266A8A6D008130E9 /* Main.storyboard */; };
-		E72F4F5C266A8A6E008130E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72F4F5B266A8A6E008130E9 /* Assets.xcassets */; };
-		E72F4F5F266A8A6E008130E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72F4F5D266A8A6E008130E9 /* LaunchScreen.storyboard */; };
-		E72F4F75266A8E07008130E9 /* GazePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4F74266A8E07008130E9 /* GazePointView.swift */; };
-		E72F4F77266A8E1D008130E9 /* CallibrationPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F4F76266A8E1D008130E9 /* CallibrationPointView.swift */; };
-		E7F7AE67266CCB43002CCF43 /* SeeSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F7AE65266CCB3F002CCF43 /* SeeSo.framework */; };
-		E7F7AE68266CCB43002CCF43 /* SeeSo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F7AE65266CCB3F002CCF43 /* SeeSo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E71D91D7266C130200BC908C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D91D6266C130200BC908C /* ViewController.swift */; };
+		E71D91D9266C131800BC908C /* GazeTrackingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D91D8266C131800BC908C /* GazeTrackingController.swift */; };
+		E7F09F7C266BFEF6005EE640 /* VisualPazerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */; };
+		E7F09F80266BFEF7005EE640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F09F7F266BFEF7005EE640 /* Assets.xcassets */; };
+		E7F09F83266BFEF7005EE640 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F09F82266BFEF7005EE640 /* Preview Assets.xcassets */; };
+		E7F7AE42266C3672002CCF43 /* SeeSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */; };
+		E7F7AE43266C3672002CCF43 /* SeeSo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F7AE4A266C4953002CCF43 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE49266C4953002CCF43 /* SideMenuView.swift */; };
+		E7F7AE4C266C495C002CCF43 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE4B266C495C002CCF43 /* PageView.swift */; };
+		E7F7AE4E266C4988002CCF43 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE4D266C4988002CCF43 /* NavView.swift */; };
+		E7F7AE5E266CB5D9002CCF43 /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE5D266CB5D9002CCF43 /* CalibrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E72F4F6C266A8A86008130E9 /* Embed Frameworks */ = {
+		E7F7AE44266C3672002CCF43 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E7F7AE68266CCB43002CCF43 /* SeeSo.framework in Embed Frameworks */,
+				E7F7AE43266C3672002CCF43 /* SeeSo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,83 +35,101 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E72F4F4F266A8A6D008130E9 /* VisualPazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualPazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E72F4F52266A8A6D008130E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E72F4F54266A8A6D008130E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E72F4F56266A8A6D008130E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E72F4F59266A8A6D008130E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E72F4F5B266A8A6E008130E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E72F4F5E266A8A6E008130E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E72F4F60266A8A6E008130E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E72F4F74266A8E07008130E9 /* GazePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazePointView.swift; sourceTree = "<group>"; };
-		E72F4F76266A8E1D008130E9 /* CallibrationPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallibrationPointView.swift; sourceTree = "<group>"; };
-		E7F7AE65266CCB3F002CCF43 /* SeeSo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeSo.framework; sourceTree = "<group>"; };
+		E71D91D6266C130200BC908C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E71D91D8266C131800BC908C /* GazeTrackingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GazeTrackingController.swift; sourceTree = "<group>"; };
+		E7F09F78266BFEF6005EE640 /* VisualPazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualPazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualPazerApp.swift; sourceTree = "<group>"; };
+		E7F09F7F266BFEF7005EE640 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7F09F82266BFEF7005EE640 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E7F09F84266BFEF7005EE640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeSo.framework; sourceTree = "<group>"; };
+		E7F7AE49266C4953002CCF43 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		E7F7AE4B266C495C002CCF43 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		E7F7AE4D266C4988002CCF43 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		E7F7AE5D266CB5D9002CCF43 /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E72F4F4C266A8A6D008130E9 /* Frameworks */ = {
+		E7F09F75266BFEF6005EE640 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F7AE67266CCB43002CCF43 /* SeeSo.framework in Frameworks */,
+				E7F7AE42266C3672002CCF43 /* SeeSo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E72F4F46266A8A6D008130E9 = {
+		E7F09F6F266BFEF6005EE640 = {
 			isa = PBXGroup;
 			children = (
-				E72F4F51266A8A6D008130E9 /* VisualPazer */,
-				E72F4F50266A8A6D008130E9 /* Products */,
+				E7F09F7A266BFEF6005EE640 /* VisualPazer */,
+				E7F09F79266BFEF6005EE640 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E72F4F50266A8A6D008130E9 /* Products */ = {
+		E7F09F79266BFEF6005EE640 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E72F4F4F266A8A6D008130E9 /* VisualPazer.app */,
+				E7F09F78266BFEF6005EE640 /* VisualPazer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E72F4F51266A8A6D008130E9 /* VisualPazer */ = {
+		E7F09F7A266BFEF6005EE640 /* VisualPazer */ = {
 			isa = PBXGroup;
 			children = (
-				E7F7AE65266CCB3F002CCF43 /* SeeSo.framework */,
-				E72F4F52266A8A6D008130E9 /* AppDelegate.swift */,
-				E72F4F54266A8A6D008130E9 /* SceneDelegate.swift */,
-				E72F4F56266A8A6D008130E9 /* ViewController.swift */,
-				E72F4F73266A8DEE008130E9 /* views */,
-				E72F4F58266A8A6D008130E9 /* Main.storyboard */,
-				E72F4F5D266A8A6E008130E9 /* LaunchScreen.storyboard */,
-				E72F4F5B266A8A6E008130E9 /* Assets.xcassets */,
-				E72F4F60266A8A6E008130E9 /* Info.plist */,
+				E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */,
+				E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */,
+				E7F09F98266C068B005EE640 /* Views */,
+				E7F7AE41266C3519002CCF43 /* Controllers */,
+				E7F09F7F266BFEF7005EE640 /* Assets.xcassets */,
+				E7F09F84266BFEF7005EE640 /* Info.plist */,
+				E7F09F81266BFEF7005EE640 /* Preview Content */,
 			);
 			path = VisualPazer;
 			sourceTree = "<group>";
 		};
-		E72F4F73266A8DEE008130E9 /* views */ = {
+		E7F09F81266BFEF7005EE640 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				E72F4F74266A8E07008130E9 /* GazePointView.swift */,
-				E72F4F76266A8E1D008130E9 /* CallibrationPointView.swift */,
+				E7F09F82266BFEF7005EE640 /* Preview Assets.xcassets */,
 			);
-			path = views;
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E7F09F98266C068B005EE640 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E7F7AE49266C4953002CCF43 /* SideMenuView.swift */,
+				E7F7AE4B266C495C002CCF43 /* PageView.swift */,
+				E7F7AE4D266C4988002CCF43 /* NavView.swift */,
+				E7F7AE5D266CB5D9002CCF43 /* CalibrationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E7F7AE41266C3519002CCF43 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E71D91D8266C131800BC908C /* GazeTrackingController.swift */,
+				E71D91D6266C130200BC908C /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E72F4F4E266A8A6D008130E9 /* VisualPazer */ = {
+		E7F09F77266BFEF6005EE640 /* VisualPazer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E72F4F63266A8A6E008130E9 /* Build configuration list for PBXNativeTarget "VisualPazer" */;
+			buildConfigurationList = E7F09F87266BFEF7005EE640 /* Build configuration list for PBXNativeTarget "VisualPazer" */;
 			buildPhases = (
-				E72F4F4B266A8A6D008130E9 /* Sources */,
-				E72F4F4C266A8A6D008130E9 /* Frameworks */,
-				E72F4F4D266A8A6D008130E9 /* Resources */,
-				E72F4F6C266A8A86008130E9 /* Embed Frameworks */,
+				E7F09F74266BFEF6005EE640 /* Sources */,
+				E7F09F75266BFEF6005EE640 /* Frameworks */,
+				E7F09F76266BFEF6005EE640 /* Resources */,
+				E7F7AE44266C3672002CCF43 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -118,24 +137,24 @@
 			);
 			name = VisualPazer;
 			productName = VisualPazer;
-			productReference = E72F4F4F266A8A6D008130E9 /* VisualPazer.app */;
+			productReference = E7F09F78266BFEF6005EE640 /* VisualPazer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E72F4F47266A8A6D008130E9 /* Project object */ = {
+		E7F09F70266BFEF6005EE640 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
-					E72F4F4E266A8A6D008130E9 = {
+					E7F09F77266BFEF6005EE640 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
 			};
-			buildConfigurationList = E72F4F4A266A8A6D008130E9 /* Build configuration list for PBXProject "VisualPazer" */;
+			buildConfigurationList = E7F09F73266BFEF6005EE640 /* Build configuration list for PBXProject "VisualPazer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,65 +162,47 @@
 				en,
 				Base,
 			);
-			mainGroup = E72F4F46266A8A6D008130E9;
-			productRefGroup = E72F4F50266A8A6D008130E9 /* Products */;
+			mainGroup = E7F09F6F266BFEF6005EE640;
+			productRefGroup = E7F09F79266BFEF6005EE640 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E72F4F4E266A8A6D008130E9 /* VisualPazer */,
+				E7F09F77266BFEF6005EE640 /* VisualPazer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E72F4F4D266A8A6D008130E9 /* Resources */ = {
+		E7F09F76266BFEF6005EE640 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72F4F5F266A8A6E008130E9 /* LaunchScreen.storyboard in Resources */,
-				E72F4F5C266A8A6E008130E9 /* Assets.xcassets in Resources */,
-				E72F4F5A266A8A6D008130E9 /* Main.storyboard in Resources */,
+				E7F09F83266BFEF7005EE640 /* Preview Assets.xcassets in Resources */,
+				E7F09F80266BFEF7005EE640 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E72F4F4B266A8A6D008130E9 /* Sources */ = {
+		E7F09F74266BFEF6005EE640 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72F4F57266A8A6D008130E9 /* ViewController.swift in Sources */,
-				E72F4F53266A8A6D008130E9 /* AppDelegate.swift in Sources */,
-				E72F4F75266A8E07008130E9 /* GazePointView.swift in Sources */,
-				E72F4F55266A8A6D008130E9 /* SceneDelegate.swift in Sources */,
-				E72F4F77266A8E1D008130E9 /* CallibrationPointView.swift in Sources */,
+				E71D91D9266C131800BC908C /* GazeTrackingController.swift in Sources */,
+				E7F7AE5E266CB5D9002CCF43 /* CalibrationView.swift in Sources */,
+				E7F7AE4C266C495C002CCF43 /* PageView.swift in Sources */,
+				E7F7AE4A266C4953002CCF43 /* SideMenuView.swift in Sources */,
+				E71D91D7266C130200BC908C /* ViewController.swift in Sources */,
+				E7F09F7C266BFEF6005EE640 /* VisualPazerApp.swift in Sources */,
+				E7F7AE4E266C4988002CCF43 /* NavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		E72F4F58266A8A6D008130E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E72F4F59266A8A6D008130E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E72F4F5D266A8A6E008130E9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E72F4F5E266A8A6E008130E9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		E72F4F61266A8A6E008130E9 /* Debug */ = {
+		E7F09F85266BFEF7005EE640 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,6 +256,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -262,7 +264,7 @@
 			};
 			name = Debug;
 		};
-		E72F4F62266A8A6E008130E9 /* Release */ = {
+		E7F09F86266BFEF7005EE640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -309,7 +311,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"MTL_ENABLE_DEBUG_INFO[arch=*]" = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -317,74 +321,88 @@
 			};
 			name = Release;
 		};
-		E72F4F64266A8A6E008130E9 /* Debug */ = {
+		E7F09F88266BFEF7005EE640 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VisualPazer/Preview Content\"";
 				DEVELOPMENT_TEAM = 3TMB4JD2A7;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VisualPazer",
 				);
 				INFOPLIST_FILE = VisualPazer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = lyoon.VisualPazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES_ERROR;
 			};
 			name = Debug;
 		};
-		E72F4F65266A8A6E008130E9 /* Release */ = {
+		E7F09F89266BFEF7005EE640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VisualPazer/Preview Content\"";
 				DEVELOPMENT_TEAM = 3TMB4JD2A7;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/VisualPazer",
 				);
 				INFOPLIST_FILE = VisualPazer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = lyoon.VisualPazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES_ERROR;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E72F4F4A266A8A6D008130E9 /* Build configuration list for PBXProject "VisualPazer" */ = {
+		E7F09F73266BFEF6005EE640 /* Build configuration list for PBXProject "VisualPazer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E72F4F61266A8A6E008130E9 /* Debug */,
-				E72F4F62266A8A6E008130E9 /* Release */,
+				E7F09F85266BFEF7005EE640 /* Debug */,
+				E7F09F86266BFEF7005EE640 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E72F4F63266A8A6E008130E9 /* Build configuration list for PBXNativeTarget "VisualPazer" */ = {
+		E7F09F87266BFEF7005EE640 /* Build configuration list for PBXNativeTarget "VisualPazer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E72F4F64266A8A6E008130E9 /* Debug */,
-				E72F4F65266A8A6E008130E9 /* Release */,
+				E7F09F88266BFEF7005EE640 /* Debug */,
+				E7F09F89266BFEF7005EE640 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E72F4F47266A8A6D008130E9 /* Project object */;
+	rootObject = E7F09F70266BFEF6005EE640 /* Project object */;
 }
