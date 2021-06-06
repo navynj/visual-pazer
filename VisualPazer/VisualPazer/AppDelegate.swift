@@ -1,14 +1,13 @@
 //
 //  AppDelegate.swift
-//  SeeSoSample
+//  VisualPazer
 //
-//  Created by VisualCamp on 2020/06/12.
-//  Copyright © 2020 VisaulCamp. All rights reserved.
+//  Created by 이윤지 on 2021/06/05.
 //
 
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
