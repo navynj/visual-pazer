@@ -15,7 +15,7 @@ struct VisualPazerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SideMenuView()
+            TestView()
 //                .environmentObject(gazePoint)
 //                .environmentObject(tracker)
         }
