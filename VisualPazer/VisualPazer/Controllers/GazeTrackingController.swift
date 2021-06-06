@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct GazeTrackingController: UIViewControllerRepresentable {
-
+    
+    var tracker : TrackerViewModel
+    var gazePoint : GazeViewModel
+    var calibration : CalibrationViewModel
+    var status : StatusViewModel
+    
     func makeUIViewController(context: Context) -> ViewController {
         let viewController = ViewController()
+        viewController.tracker = tracker
+        viewController.gazePoint = gazePoint
+        viewController.calibration = calibration
+        viewController.status = status
         return viewController
     }
 

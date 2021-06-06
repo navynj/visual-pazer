@@ -12,32 +12,18 @@ import SeeSo
 
 class ViewController: UIViewController {
     
-    var curState : AppState? = nil
-    var showGazePoint : Bool = false
-    var showCaliPoint : Bool = false
-    var xy = [Double](repeating: 0, count: 2)
+    var tracker : TrackerViewModel?
+    var gazePoint : GazeViewModel?
+    var calibration : CalibrationViewModel?
+    var status : StatusViewModel?
     
-    enum AppState : String {
-        case Disable = "Disable"
-        case Idle = "Idle"
-        case Initialized = "Initialized"
-        case Tracking = "Tracking"
-        case Calibrating = "Calibradting"
-    }
-    
-    private let licenseKey : String = "" // get key here : https://console.seeso.io/#/console/license-keys
-    private var tracker : GazeTracker? = nil
-    
-    private var isFiltered : Bool = true
-    private var filterManager : OneEuroFilterManager? = OneEuroFilterManager()
-    private var caliMode : CalibrationMode = .ONE_POINT
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if !checkCameraAccess() {
             requestAccess()
         } else {
-            self.curState = .Idle
+            status?.curState = .Idle
         }
         initGazeTracker()
     }
@@ -55,31 +41,14 @@ class ViewController: UIViewController {
     }
     
     private func initGazeTracker() {
-        GazeTracker.initGazeTracker(license: self.licenseKey, delegate: self)
-    }
-    
-    func startTracking() {
-        tracker?.startTracking()
-    }
-    
-    func stopTracking() {
-        tracker?.stopTracking()
-    }
-    
-    func startCalibration() {
-        let result = tracker?.startCalibration(mode : caliMode)
-        if let isStart = result {
-            if !isStart {
-                print("Calibration Started failed.")
-            }
-        }
+        GazeTracker.initGazeTracker(license: tracker!.licenseKey, delegate: self)
     }
 }
 
 
 extension ViewController : StatusDelegate {
     func onStarted() {
-            print("tracker starts tracking.")
+            print("starts tracking.")
     }
     
     func onStopped(error: StatusError) {
@@ -90,10 +59,9 @@ extension ViewController : StatusDelegate {
 extension ViewController : InitializationDelegate {
     func onInitialized(tracker: GazeTracker?, error: InitializationError) {
         if (tracker != nil) {
-            self.tracker = tracker
-            self.tracker?.setDelegates(statusDelegate: self, gazeDelegate: self, calibrationDelegate: self, imageDelegate: nil)
-            curState = .Initialized
-            startTracking() // for test
+            self.tracker?.gazeTracker = tracker
+            self.tracker?.gazeTracker?.setDelegates(statusDelegate: self, gazeDelegate: self, calibrationDelegate: self, imageDelegate: nil)
+            status?.curState = .Initialized
                 print("initialized GazeTracker")
         } else {
                 print("init failed : \(error.description)")
@@ -103,20 +71,21 @@ extension ViewController : InitializationDelegate {
 
 extension ViewController : GazeDelegate {
     func onGaze(gazeInfo: GazeInfo) {
-        if tracker != nil && !tracker!.isCalibrating() {
+        if self.tracker?.gazeTracker != nil && ((self.tracker?.gazeTracker!.isCalibrating()) != nil) {
             if gazeInfo.trackingState == .SUCCESS {
-                if !self.isFiltered {
-                        xy = [gazeInfo.x, gazeInfo.y]
+                if ((self.tracker?.isFiltered) != nil) {
+                    gazePoint?.x = CGFloat(gazeInfo.x)
+                    gazePoint?.y = CGFloat(gazeInfo.y)
                 } else {
-                    if filterManager != nil && filterManager!.filterValues(timestamp: gazeInfo.timestamp, val: [gazeInfo.x, gazeInfo.y]) {
-                        xy = filterManager!.getFilteredValues()
+                    if self.tracker?.filterManager != nil && self.tracker!.filterManager!.filterValues(timestamp: gazeInfo.timestamp, val: [gazeInfo.x, gazeInfo.y]) {
+                        let _xy = self.tracker!.filterManager!.getFilteredValues()
+                        gazePoint?.x = CGFloat(_xy[0])
+                        gazePoint?.y = CGFloat(_xy[1])
                     }
                 }
-//                print("timestamp : \(self.gaze.timestamp)")
-                print("x, y : \(self.xy[0]), \(self.xy[1])")
-//                print("state : \(self.gaze.trackingState)")
+                gazePoint?.hide = false
             } else {
-                self.showGazePoint = false
+                gazePoint?.hide = true
             }
         }
     }
@@ -124,24 +93,24 @@ extension ViewController : GazeDelegate {
 
 extension ViewController : CalibrationDelegate {
     func onCalibrationProgress(progress: Double) {
-        showCaliPoint = true
-        showGazePoint = false
+        calibration?.hide = false
+        gazePoint?.hide = true
     }
     
     func onCalibrationNextPoint(x: Double, y: Double) {
-        curState = .Calibrating
+        status?.curState = .Calibrating
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            // self.caliPointView?.center = CGPoint(x: CGFloat(x), y: CGFloat(y)) // - 화면에 어떻게 할지 생각해보기
-            if let result = self.tracker?.startCollectSamples() {
+            self.calibration?.center = CGPoint(x: CGFloat(x), y: CGFloat(y))
+            if let result = self.tracker?.gazeTracker?.startCollectSamples() {
                 print("startCollectSamples : \(result)")
             }
         }
     }
     
     func onCalibrationFinished(calibrationData: [Double]) {
-        curState = .Tracking
+        status?.curState = .Tracking
         print("Finished calibration")
-        showCaliPoint = false
-        showGazePoint = true
+        calibration?.hide = true
+        gazePoint?.hide = false
     }
 }
