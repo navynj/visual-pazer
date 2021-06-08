@@ -15,7 +15,7 @@ class TrackerViewModel: ObservableObject {
     
     var gazeTracker : GazeTracker? = nil
 
-    let licenseKey : String = "" // get key here : https://console.seeso.io/#/console/license-keys
+    let licenseKey : String = License().key // get key here : https://console.seeso.io/#/console/license-keys
     var caliMode : CalibrationMode = .ONE_POINT
     var isFiltered : Bool = false
     var filterManager : OneEuroFilterManager? = OneEuroFilterManager()
@@ -26,6 +26,14 @@ class TrackerViewModel: ObservableObject {
 
     func stopTracking() {
         gazeTracker?.stopTracking()
+    }
+    
+    func toggleGazePoint() {
+        if gazePoint.show {
+            gazePoint.show = false
+        } else {
+            gazePoint.show = true
+        }
     }
 
     func startCalibration() {

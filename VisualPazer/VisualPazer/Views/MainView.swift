@@ -32,7 +32,7 @@ struct MainView: View {
                         // for test : (x, y) value
                         Text("(x, y) : \(tracker.gazePoint.x), \(tracker.gazePoint.y)")
                             .foregroundColor(.gray)
-                        Text("hide : \(tracker.gazePoint.hide.description)")
+                        Text("hide : \(tracker.gazePoint.show.description)")
                             .foregroundColor(.gray)
                     }
                 )
@@ -45,7 +45,7 @@ struct MainView: View {
                 .frame(width: 20, height: 20)
                 .foregroundColor(.gray)
                 .position(x: tracker.gazePoint.x, y: tracker.gazePoint.y)
-                .opacity(tracker.gazePoint.hide ? 0 : 0.5)
+                .opacity(tracker.gazePoint.show ? 0.5 : 0)
                 .animation(.easeInOut)
             
             

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct GazeModel {
-    var hide : Bool = true
+    var show : Bool = false
     var x : CGFloat = 0
     var y : CGFloat = 0
 }
