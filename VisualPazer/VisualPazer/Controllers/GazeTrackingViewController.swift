@@ -15,11 +15,8 @@ class GazeTrackingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if !checkCameraAccess() {
             requestAccess()
-        } else {
-//            status?.curState = .Idle
         }
         initGazeTracker()
     }
@@ -45,13 +42,13 @@ class GazeTrackingViewController: UIViewController {
 extension GazeTrackingViewController : StatusDelegate {
     func onStarted() {
         tracker?.isTracking = true
-        tracker?.gazePoint.hide = false
+        tracker?.gazePoint.show = true
             print("starts tracking.")
     }
     
     func onStopped(error: StatusError) {
         tracker?.isTracking = false
-        tracker?.gazePoint.hide = true
+        tracker?.gazePoint.show = false
             print("stop error : \(error.description)")
     }
 }
@@ -61,7 +58,6 @@ extension GazeTrackingViewController : InitializationDelegate {
         if (tracker != nil) {
             self.tracker?.gazeTracker = tracker
             self.tracker?.gazeTracker?.setDelegates(statusDelegate: self, gazeDelegate: self, calibrationDelegate: self, imageDelegate: nil)
-//            status?.curState = .Initialized
                 print("initialized GazeTracker")
         } else {
                 print("init failed : \(error.description)")
@@ -90,12 +86,11 @@ extension GazeTrackingViewController : GazeDelegate {
 
 extension GazeTrackingViewController : CalibrationDelegate {
     func onCalibrationProgress(progress: Double) {
-        tracker?.caliPoint.hide = false
-        tracker?.gazePoint.hide = true
+        tracker?.caliPoint.show = true
+        tracker?.gazePoint.show = false
     }
     
     func onCalibrationNextPoint(x: Double, y: Double) {
-//        status?.curState = .Calibrating
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.tracker?.caliPoint.center = CGPoint(x: CGFloat(x), y: CGFloat(y))
             if let result = self.tracker?.gazeTracker?.startCollectSamples() {
@@ -105,9 +100,8 @@ extension GazeTrackingViewController : CalibrationDelegate {
     }
     
     func onCalibrationFinished(calibrationData: [Double]) {
-//        status?.curState = .Tracking
         print("Finished calibration")
-        tracker?.caliPoint.hide = true
-        tracker?.gazePoint.hide = false
+        tracker?.caliPoint.show = false
+        tracker?.gazePoint.show = true
     }
 }

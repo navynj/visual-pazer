@@ -138,3 +138,6 @@ iOSInjectionProject/
 SeeSo.framework
 /SeeSo.framework/
 SeeSo.framework/
+
+# license key (SeeSo)
+License.swift

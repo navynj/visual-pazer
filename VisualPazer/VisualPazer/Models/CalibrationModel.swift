@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct CalibrationModel {
-    var hide : Bool = true
+    var show : Bool = false
     var center : CGPoint = CGPoint()
     var progress : Double = 0
 }

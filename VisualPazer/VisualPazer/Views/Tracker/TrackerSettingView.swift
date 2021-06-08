@@ -41,7 +41,7 @@ struct TrackerSettingView : View {
                     navMenu.toggle()
                     sideMenu.toggle()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                        tracker.gazePoint.hide = true
+                        tracker.toggleGazePoint()
                     })
                 } else {
                     tracker.stopTracking()
@@ -58,14 +58,10 @@ struct TrackerSettingView : View {
                     .foregroundColor(Color.black.opacity(0.7))
                     .background(
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(tracker.gazePoint.hide ? Color.gray.opacity(0.3) : Color("millieYellow"))
+                            .fill(tracker.gazePoint.show ? Color("millieYellow") : Color.gray.opacity(0.3))
                     )
                     .onTapGesture {
-                        if tracker.gazePoint.hide {
-                            tracker.gazePoint.hide = false
-                        } else {
-                            tracker.gazePoint.hide = true
-                        }
+                        tracker.toggleGazePoint()
                     }
                 
                 Text("초기화")
