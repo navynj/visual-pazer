@@ -7,22 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E71D91D7266C130200BC908C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D91D6266C130200BC908C /* ViewController.swift */; };
+		E71D91D7266C130200BC908C /* GazeTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D91D6266C130200BC908C /* GazeTrackingViewController.swift */; };
 		E71D91D9266C131800BC908C /* GazeTrackingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D91D8266C131800BC908C /* GazeTrackingController.swift */; };
+		E7C27938266FC51F00A40436 /* GazeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27937266FC51F00A40436 /* GazeModel.swift */; };
+		E7C2793B266FC93200A40436 /* CalibrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2793A266FC93200A40436 /* CalibrationModel.swift */; };
+		E7C2793D266FCF0D00A40436 /* BookMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2793C266FCF0D00A40436 /* BookMenuModels.swift */; };
+		E7C2793F266FCF3700A40436 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2793E266FCF3700A40436 /* BookModel.swift */; };
+		E7C27941266FCF6400A40436 /* SideMenuViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27940266FCF6400A40436 /* SideMenuViewModels.swift */; };
+		E7C27945266FCFD500A40436 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27944266FCFD500A40436 /* MainView.swift */; };
+		E7C2794A266FD08A00A40436 /* BookInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27949266FD08A00A40436 /* BookInfoView.swift */; };
+		E7C27953266FD11800A40436 /* TrackerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27952266FD11800A40436 /* TrackerSettingView.swift */; };
+		E7C27955266FD12700A40436 /* ViewerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27954266FD12700A40436 /* ViewerSettingView.swift */; };
+		E7C27957266FD34100A40436 /* NavMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27956266FD34100A40436 /* NavMenuView.swift */; };
+		E7C27959266FDA1300A40436 /* NavMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27958266FDA1300A40436 /* NavMenuViewModel.swift */; };
+		E7E11895266EA6C4008A8DB4 /* SeeSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E11893266EA6B5008A8DB4 /* SeeSo.framework */; };
+		E7E11896266EA6C4008A8DB4 /* SeeSo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E11893266EA6B5008A8DB4 /* SeeSo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7F09F7C266BFEF6005EE640 /* VisualPazerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */; };
 		E7F09F80266BFEF7005EE640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F09F7F266BFEF7005EE640 /* Assets.xcassets */; };
 		E7F09F83266BFEF7005EE640 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F09F82266BFEF7005EE640 /* Preview Assets.xcassets */; };
-		E7F7AE42266C3672002CCF43 /* SeeSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */; };
-		E7F7AE43266C3672002CCF43 /* SeeSo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7F7AE4A266C4953002CCF43 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE49266C4953002CCF43 /* SideMenuView.swift */; };
-		E7F7AE4C266C495C002CCF43 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE4B266C495C002CCF43 /* PageView.swift */; };
-		E7F7AE4E266C4988002CCF43 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE4D266C4988002CCF43 /* NavView.swift */; };
 		E7F7AE5E266CB5D9002CCF43 /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE5D266CB5D9002CCF43 /* CalibrationView.swift */; };
 		E7F7AE6C266CD643002CCF43 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE6B266CD643002CCF43 /* TrackerViewModel.swift */; };
-		E7F7AE6F266CD68C002CCF43 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE6E266CD68C002CCF43 /* StatusViewModel.swift */; };
-		E7F7AE71266CD693002CCF43 /* GazeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE70266CD693002CCF43 /* GazeViewModel.swift */; };
-		E7F7AE73266CD6AD002CCF43 /* CalibrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE72266CD6AD002CCF43 /* CalibrationViewModel.swift */; };
-		E7F7AE75266CE59B002CCF43 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F7AE74266CE59B002CCF43 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E7F7AE43266C3672002CCF43 /* SeeSo.framework in Embed Frameworks */,
+				E7E11896266EA6C4008A8DB4 /* SeeSo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,23 +45,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E71D91D6266C130200BC908C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E71D91D6266C130200BC908C /* GazeTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GazeTrackingViewController.swift; sourceTree = "<group>"; };
 		E71D91D8266C131800BC908C /* GazeTrackingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GazeTrackingController.swift; sourceTree = "<group>"; };
+		E7C27937266FC51F00A40436 /* GazeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeModel.swift; sourceTree = "<group>"; };
+		E7C2793A266FC93200A40436 /* CalibrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationModel.swift; sourceTree = "<group>"; };
+		E7C2793C266FCF0D00A40436 /* BookMenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMenuModels.swift; sourceTree = "<group>"; };
+		E7C2793E266FCF3700A40436 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		E7C27940266FCF6400A40436 /* SideMenuViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModels.swift; sourceTree = "<group>"; };
+		E7C27944266FCFD500A40436 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E7C27949266FD08A00A40436 /* BookInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoView.swift; sourceTree = "<group>"; };
+		E7C27952266FD11800A40436 /* TrackerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerSettingView.swift; sourceTree = "<group>"; };
+		E7C27954266FD12700A40436 /* ViewerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerSettingView.swift; sourceTree = "<group>"; };
+		E7C27956266FD34100A40436 /* NavMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuView.swift; sourceTree = "<group>"; };
+		E7C27958266FDA1300A40436 /* NavMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuViewModel.swift; sourceTree = "<group>"; };
+		E7E11893266EA6B5008A8DB4 /* SeeSo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeSo.framework; sourceTree = "<group>"; };
 		E7F09F78266BFEF6005EE640 /* VisualPazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualPazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualPazerApp.swift; sourceTree = "<group>"; };
 		E7F09F7F266BFEF7005EE640 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7F09F82266BFEF7005EE640 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7F09F84266BFEF7005EE640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeSo.framework; sourceTree = "<group>"; };
 		E7F7AE49266C4953002CCF43 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
-		E7F7AE4B266C495C002CCF43 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
-		E7F7AE4D266C4988002CCF43 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		E7F7AE5D266CB5D9002CCF43 /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
 		E7F7AE6B266CD643002CCF43 /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
-		E7F7AE6E266CD68C002CCF43 /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusViewModel.swift; path = ../../../../../../Documents/StatusViewModel.swift; sourceTree = "<group>"; };
-		E7F7AE70266CD693002CCF43 /* GazeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GazeViewModel.swift; path = ../../../../../../Documents/GazeViewModel.swift; sourceTree = "<group>"; };
-		E7F7AE72266CD6AD002CCF43 /* CalibrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalibrationViewModel.swift; path = ../../../../../../Documents/CalibrationViewModel.swift; sourceTree = "<group>"; };
-		E7F7AE74266CE59B002CCF43 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestView.swift; path = ../../../../../../Documents/TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,18 +74,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F7AE42266C3672002CCF43 /* SeeSo.framework in Frameworks */,
+				E7E11895266EA6C4008A8DB4 /* SeeSo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7C27939266FC52300A40436 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E7C27937266FC51F00A40436 /* GazeModel.swift */,
+				E7C2793A266FC93200A40436 /* CalibrationModel.swift */,
+				E7C2793C266FCF0D00A40436 /* BookMenuModels.swift */,
+				E7C2793E266FCF3700A40436 /* BookModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E7C27946266FD01000A40436 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E7C27956266FD34100A40436 /* NavMenuView.swift */,
+				E7F7AE49266C4953002CCF43 /* SideMenuView.swift */,
+				E7C27949266FD08A00A40436 /* BookInfoView.swift */,
+				E7C27954266FD12700A40436 /* ViewerSettingView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		E7C2794D266FD0C500A40436 /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				E7C27952266FD11800A40436 /* TrackerSettingView.swift */,
+				E7F7AE5D266CB5D9002CCF43 /* CalibrationView.swift */,
+			);
+			path = Tracker;
+			sourceTree = "<group>";
+		};
+		E7E11891266EA38C008A8DB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7F09F6F266BFEF6005EE640 = {
 			isa = PBXGroup;
 			children = (
 				E7F09F7A266BFEF6005EE640 /* VisualPazer */,
 				E7F09F79266BFEF6005EE640 /* Products */,
+				E7E11891266EA38C008A8DB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,9 +139,10 @@
 		E7F09F7A266BFEF6005EE640 /* VisualPazer */ = {
 			isa = PBXGroup;
 			children = (
-				E7F7AE3C266C25B6002CCF43 /* SeeSo.framework */,
+				E7E11893266EA6B5008A8DB4 /* SeeSo.framework */,
 				E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */,
 				E7F09F98266C068B005EE640 /* Views */,
+				E7C27939266FC52300A40436 /* Models */,
 				E7F7AE6D266CD64C002CCF43 /* View Models */,
 				E7F7AE41266C3519002CCF43 /* Controllers */,
 				E7F09F7F266BFEF7005EE640 /* Assets.xcassets */,
@@ -113,11 +163,9 @@
 		E7F09F98266C068B005EE640 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E7F7AE49266C4953002CCF43 /* SideMenuView.swift */,
-				E7F7AE74266CE59B002CCF43 /* TestView.swift */,
-				E7F7AE4B266C495C002CCF43 /* PageView.swift */,
-				E7F7AE4D266C4988002CCF43 /* NavView.swift */,
-				E7F7AE5D266CB5D9002CCF43 /* CalibrationView.swift */,
+				E7C27944266FCFD500A40436 /* MainView.swift */,
+				E7C27946266FD01000A40436 /* Menu */,
+				E7C2794D266FD0C500A40436 /* Tracker */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				E71D91D8266C131800BC908C /* GazeTrackingController.swift */,
-				E71D91D6266C130200BC908C /* ViewController.swift */,
+				E71D91D6266C130200BC908C /* GazeTrackingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,9 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				E7F7AE6B266CD643002CCF43 /* TrackerViewModel.swift */,
-				E7F7AE6E266CD68C002CCF43 /* StatusViewModel.swift */,
-				E7F7AE70266CD693002CCF43 /* GazeViewModel.swift */,
-				E7F7AE72266CD6AD002CCF43 /* CalibrationViewModel.swift */,
+				E7C27940266FCF6400A40436 /* SideMenuViewModels.swift */,
+				E7C27958266FDA1300A40436 /* NavMenuViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -212,18 +259,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F7AE75266CE59B002CCF43 /* TestView.swift in Sources */,
-				E7F7AE71266CD693002CCF43 /* GazeViewModel.swift in Sources */,
+				E7C2793D266FCF0D00A40436 /* BookMenuModels.swift in Sources */,
+				E7C27938266FC51F00A40436 /* GazeModel.swift in Sources */,
 				E71D91D9266C131800BC908C /* GazeTrackingController.swift in Sources */,
 				E7F7AE6C266CD643002CCF43 /* TrackerViewModel.swift in Sources */,
+				E7C2793F266FCF3700A40436 /* BookModel.swift in Sources */,
+				E7C27959266FDA1300A40436 /* NavMenuViewModel.swift in Sources */,
 				E7F7AE5E266CB5D9002CCF43 /* CalibrationView.swift in Sources */,
-				E7F7AE4C266C495C002CCF43 /* PageView.swift in Sources */,
+				E7C27941266FCF6400A40436 /* SideMenuViewModels.swift in Sources */,
+				E7C27945266FCFD500A40436 /* MainView.swift in Sources */,
 				E7F7AE4A266C4953002CCF43 /* SideMenuView.swift in Sources */,
-				E7F7AE6F266CD68C002CCF43 /* StatusViewModel.swift in Sources */,
-				E71D91D7266C130200BC908C /* ViewController.swift in Sources */,
-				E7F7AE73266CD6AD002CCF43 /* CalibrationViewModel.swift in Sources */,
+				E7C27957266FD34100A40436 /* NavMenuView.swift in Sources */,
+				E71D91D7266C130200BC908C /* GazeTrackingViewController.swift in Sources */,
+				E7C2793B266FC93200A40436 /* CalibrationModel.swift in Sources */,
 				E7F09F7C266BFEF6005EE640 /* VisualPazerApp.swift in Sources */,
-				E7F7AE4E266C4988002CCF43 /* NavView.swift in Sources */,
+				E7C27955266FD12700A40436 /* ViewerSettingView.swift in Sources */,
+				E7C2794A266FD08A00A40436 /* BookInfoView.swift in Sources */,
+				E7C27953266FD11800A40436 /* TrackerSettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +455,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = lyoon.VisualPazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = YES_ERROR;

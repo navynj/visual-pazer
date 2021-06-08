@@ -1,29 +1,22 @@
 //
-//  ViewController.swift
+//  GazeTrackingController.swift
 //  VisualPazer
 //
 //  Created by 이윤지 on 2021/06/06.
 //
-
 import SwiftUI
 
-struct GazeTrackingController: UIViewControllerRepresentable {
+struct GazeTrackingControllor: UIViewControllerRepresentable {
     
     var tracker : TrackerViewModel
-    var gazePoint : GazeViewModel
-    var calibration : CalibrationViewModel
-    var status : StatusViewModel
     
-    func makeUIViewController(context: Context) -> ViewController {
-        let viewController = ViewController()
-        viewController.tracker = tracker
-        viewController.gazePoint = gazePoint
-        viewController.calibration = calibration
-        viewController.status = status
-        return viewController
+    func makeUIViewController(context: Context) -> GazeTrackingViewController {
+        let controller = GazeTrackingViewController()
+        controller.tracker = tracker
+        return controller
     }
 
-    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: GazeTrackingViewController, context: Context) {
 
     }
 

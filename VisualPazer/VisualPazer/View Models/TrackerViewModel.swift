@@ -4,27 +4,30 @@
 //
 //  Created by 이윤지 on 2021/06/06.
 //
-
 import Foundation
 import SeeSo
 
 class TrackerViewModel: ObservableObject {
 
-    @Published var gazeTracker : GazeTracker? = nil
+    @Published var isTracking : Bool = false
+    @Published var gazePoint : GazeModel = GazeModel()
+    @Published var caliPoint : CalibrationModel = CalibrationModel()
     
+    var gazeTracker : GazeTracker? = nil
+
     let licenseKey : String = "" // get key here : https://console.seeso.io/#/console/license-keys
     var caliMode : CalibrationMode = .ONE_POINT
-    var isFiltered : Bool = true
+    var isFiltered : Bool = false
     var filterManager : OneEuroFilterManager? = OneEuroFilterManager()
-    
+
     func startTracking() {
         gazeTracker?.startTracking()
     }
-    
+
     func stopTracking() {
         gazeTracker?.stopTracking()
     }
-    
+
     func startCalibration() {
         let result = gazeTracker?.startCalibration(mode : caliMode)
         if let isStart = result {
@@ -33,5 +36,5 @@ class TrackerViewModel: ObservableObject {
             }
         }
     }
-    
+
 }

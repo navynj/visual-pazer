@@ -10,7 +10,14 @@ import SwiftUI
 struct CalibrationView: View {
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            VStack {
+                // guide (img, text, caliPoint..)
+            }
+            HStack {
+                // button (one or two)
+            }
+        }
     }
     
 }
