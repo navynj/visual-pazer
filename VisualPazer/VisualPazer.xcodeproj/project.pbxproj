@@ -20,6 +20,7 @@
 		E7C27955266FD12700A40436 /* ViewerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27954266FD12700A40436 /* ViewerSettingView.swift */; };
 		E7C27957266FD34100A40436 /* NavMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27956266FD34100A40436 /* NavMenuView.swift */; };
 		E7C27959266FDA1300A40436 /* NavMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27958266FDA1300A40436 /* NavMenuViewModel.swift */; };
+		E7C2795B266FFD0E00A40436 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2795A266FFD0E00A40436 /* License.swift */; };
 		E7E11895266EA6C4008A8DB4 /* SeeSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E11893266EA6B5008A8DB4 /* SeeSo.framework */; };
 		E7E11896266EA6C4008A8DB4 /* SeeSo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7E11893266EA6B5008A8DB4 /* SeeSo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7F09F7C266BFEF6005EE640 /* VisualPazerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */; };
@@ -58,6 +59,7 @@
 		E7C27954266FD12700A40436 /* ViewerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerSettingView.swift; sourceTree = "<group>"; };
 		E7C27956266FD34100A40436 /* NavMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuView.swift; sourceTree = "<group>"; };
 		E7C27958266FDA1300A40436 /* NavMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuViewModel.swift; sourceTree = "<group>"; };
+		E7C2795A266FFD0E00A40436 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		E7E11893266EA6B5008A8DB4 /* SeeSo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeSo.framework; sourceTree = "<group>"; };
 		E7F09F78266BFEF6005EE640 /* VisualPazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualPazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F09F7B266BFEF6005EE640 /* VisualPazerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualPazerApp.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				E7C27939266FC52300A40436 /* Models */,
 				E7F7AE6D266CD64C002CCF43 /* View Models */,
 				E7F7AE41266C3519002CCF43 /* Controllers */,
+				E7C2795A266FFD0E00A40436 /* License.swift */,
 				E7F09F7F266BFEF7005EE640 /* Assets.xcassets */,
 				E7F09F84266BFEF7005EE640 /* Info.plist */,
 				E7F09F81266BFEF7005EE640 /* Preview Content */,
@@ -262,6 +265,7 @@
 				E7C2793D266FCF0D00A40436 /* BookMenuModels.swift in Sources */,
 				E7C27938266FC51F00A40436 /* GazeModel.swift in Sources */,
 				E71D91D9266C131800BC908C /* GazeTrackingController.swift in Sources */,
+				E7C2795B266FFD0E00A40436 /* License.swift in Sources */,
 				E7F7AE6C266CD643002CCF43 /* TrackerViewModel.swift in Sources */,
 				E7C2793F266FCF3700A40436 /* BookModel.swift in Sources */,
 				E7C27959266FDA1300A40436 /* NavMenuViewModel.swift in Sources */,
