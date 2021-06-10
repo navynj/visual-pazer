@@ -9,10 +9,14 @@ import SwiftUI
 
 struct PageView: View {
     
+    @EnvironmentObject var tracker : TrackerViewModel
     @EnvironmentObject var books : BookViewModel
     @EnvironmentObject var navMenu : NavMenuViewModel
     @Binding var gazeNext : Bool
     @Binding var gazePrev : Bool
+    var h : Dis
+    
+    @State var fillYellow : Bool = false
     
     var body: some View {
         ZStack {
@@ -25,26 +29,40 @@ struct PageView: View {
                 )
                 // gaze next
                 .overlay(
-                    PageCornerView(gazeOn : $gazeNext),
+                    PageTurnerView(gazeOn : $gazeNext)
+//                        .onAppear(perform: turnNext)
+                    ,
                     alignment: .bottomTrailing
                 )
                 // gaze prev
                 .overlay(
-                    PageCornerView(gazeOn : $gazePrev)
+                    PageTurnerView(gazeOn : $gazePrev)
                         .rotationEffect(Angle(degrees: 180)),
                     alignment: .topLeading
                 )
         }
     }
-    
+
     var background: some View {
         HStack {
-            Rectangle()
-                .fill(gazePrev ? Color("millieYellow") : Color.gray.opacity(0.2))
-            Rectangle()
-                .fill(gazeNext ? Color("millieYellow") : Color.gray.opacity(0.2))
+            ZStack(alignment: .topLeading) {
+                Rectangle()
+                    .fill(Color.gray.opacity(0.2))
+                if gazePrev && !tracker.calibration.start {
+                    PageTurningView(onGaze: $gazePrev, alignment: .topLeading, pageTurn: { books.prevPage() })
+                }
+            }
+            
+            ZStack(alignment: .topLeading) {
+                Rectangle()
+                    .fill(Color.gray.opacity(0.2))
+                if gazeNext && !tracker.calibration.start  {
+                    PageTurningView(onGaze: $gazeNext, alignment: .bottomTrailing, pageTurn: { books.nextPage() })
+                }
+            }
         }
     }
+
     
     var touchArea: some View {
         HStack(spacing: 0) {
@@ -56,7 +74,7 @@ struct PageView: View {
                 }
             Rectangle()
                 .fill(Color.white.opacity(0.1))
-                .frame(width: UIScreen.main.bounds.width / 2.5)
+                .frame(width: UIScreen.main.bounds.width / 2)
                 .onTapGesture {
                     navMenu.toggle()
                     print(books.currentIndex)
