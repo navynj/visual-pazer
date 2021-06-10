@@ -10,35 +10,31 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var tracker = TrackerViewModel()
+    @ObservedObject var books : BookViewModel = BookViewModel()
     @ObservedObject var sideMenu : SideMenuViewModel = SideMenuViewModel()
     @ObservedObject var navMenu : NavMenuViewModel = NavMenuViewModel()
-    
-    let bookModel : BookModel = BookModel(
-       cover: "test",
-       title: "공간의 미래",
-       author: "유현준 (지은이)"
-   )
+    @State var bookIndex : Int = 0
     
     var body: some View {
         ZStack {
             // controlloer
             GazeTrackingControllor(tracker: tracker)
             
-            // background
-            Rectangle()
-                .foregroundColor(Color(UIColor.secondarySystemBackground))
-                .overlay(
-                    VStack {
-                        // for test : (x, y) value
-                        Text("(x, y) : \(tracker.gazePoint.x), \(tracker.gazePoint.y)")
-                            .foregroundColor(.gray)
-                        Text("hide : \(tracker.gazePoint.show.description)")
-                            .foregroundColor(.gray)
-                    }
-                )
-                .onTapGesture {
-                    navMenu.toggle()
+            // page
+//            PageView(gazeNext: $tracker.gazeNext, gazePrev: $tracker.gazePrev)
+            PageView(gazeNext: .constant(false), gazePrev: .constant(false))
+                .environmentObject(books)
+                .environmentObject(navMenu)
+            
+            // menu
+            ZStack {
+                NavMenuView(title: books.getBook(bookIndex).title)
+                if sideMenu.show {
+                    SideMenuView(book: books.getBook(bookIndex))
                 }
+            }
+            .environmentObject(navMenu)
+            .environmentObject(sideMenu)
             
             // for test : gaze point
             Circle()
@@ -48,16 +44,25 @@ struct MainView: View {
                 .opacity(tracker.gazePoint.show ? 0.5 : 0)
                 .animation(.easeInOut)
             
-            
-            // menu
-            ZStack {
-                NavMenuView()
-                if sideMenu.show {
-                    SideMenuView(book: bookModel)
+            // for check x, y
+            Rectangle()
+                .frame(width: 240, height: 200)
+                .cornerRadius(20)
+                .opacity(0.9)
+                .foregroundColor(Color(UIColor.secondarySystemBackground))
+                .overlay(
+                    VStack {
+                        // for test : (x, y) value
+                        Text("(x, y) : \(tracker.gazePoint.x), \(tracker.gazePoint.y)")
+                            .foregroundColor(.gray)
+                    Text("show : \(tracker.gazePoint.show.description)")
+                            .foregroundColor(.gray)
+                    }
+                )
+                .onTapGesture {
+                    navMenu.toggle()
                 }
-            }
-            .environmentObject(sideMenu)
-            .environmentObject(navMenu)
+            
         }
         .environmentObject(tracker)
     }

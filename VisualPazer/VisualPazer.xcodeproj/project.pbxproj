@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E71D91D7266C130200BC908C /* GazeTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D91D6266C130200BC908C /* GazeTrackingViewController.swift */; };
 		E71D91D9266C131800BC908C /* GazeTrackingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D91D8266C131800BC908C /* GazeTrackingController.swift */; };
+		E74C352F267212BC00C80C74 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C352E267212BC00C80C74 /* BookViewModel.swift */; };
+		E74C35312672130B00C80C74 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C35302672130B00C80C74 /* PageView.swift */; };
+		E74C35332672131300C80C74 /* PageCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C35322672131300C80C74 /* PageCornerView.swift */; };
 		E7C27938266FC51F00A40436 /* GazeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27937266FC51F00A40436 /* GazeModel.swift */; };
 		E7C2793B266FC93200A40436 /* CalibrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2793A266FC93200A40436 /* CalibrationModel.swift */; };
 		E7C2793D266FCF0D00A40436 /* BookMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2793C266FCF0D00A40436 /* BookMenuModels.swift */; };
@@ -48,6 +51,9 @@
 /* Begin PBXFileReference section */
 		E71D91D6266C130200BC908C /* GazeTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GazeTrackingViewController.swift; sourceTree = "<group>"; };
 		E71D91D8266C131800BC908C /* GazeTrackingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GazeTrackingController.swift; sourceTree = "<group>"; };
+		E74C352E267212BC00C80C74 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		E74C35302672130B00C80C74 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		E74C35322672131300C80C74 /* PageCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCornerView.swift; sourceTree = "<group>"; };
 		E7C27937266FC51F00A40436 /* GazeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazeModel.swift; sourceTree = "<group>"; };
 		E7C2793A266FC93200A40436 /* CalibrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationModel.swift; sourceTree = "<group>"; };
 		E7C2793C266FCF0D00A40436 /* BookMenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMenuModels.swift; sourceTree = "<group>"; };
@@ -83,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E74C35342672131800C80C74 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				E74C35302672130B00C80C74 /* PageView.swift */,
+				E74C35322672131300C80C74 /* PageCornerView.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
 		E7C27939266FC52300A40436 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				E7C27944266FCFD500A40436 /* MainView.swift */,
+				E74C35342672131800C80C74 /* Page */,
 				E7C27946266FD01000A40436 /* Menu */,
 				E7C2794D266FD0C500A40436 /* Tracker */,
 			);
@@ -188,6 +204,7 @@
 				E7F7AE6B266CD643002CCF43 /* TrackerViewModel.swift */,
 				E7C27940266FCF6400A40436 /* SideMenuViewModels.swift */,
 				E7C27958266FDA1300A40436 /* NavMenuViewModel.swift */,
+				E74C352E267212BC00C80C74 /* BookViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -267,6 +284,7 @@
 				E71D91D9266C131800BC908C /* GazeTrackingController.swift in Sources */,
 				E7C2795B266FFD0E00A40436 /* License.swift in Sources */,
 				E7F7AE6C266CD643002CCF43 /* TrackerViewModel.swift in Sources */,
+				E74C35312672130B00C80C74 /* PageView.swift in Sources */,
 				E7C2793F266FCF3700A40436 /* BookModel.swift in Sources */,
 				E7C27959266FDA1300A40436 /* NavMenuViewModel.swift in Sources */,
 				E7F7AE5E266CB5D9002CCF43 /* CalibrationView.swift in Sources */,
@@ -275,7 +293,9 @@
 				E7F7AE4A266C4953002CCF43 /* SideMenuView.swift in Sources */,
 				E7C27957266FD34100A40436 /* NavMenuView.swift in Sources */,
 				E71D91D7266C130200BC908C /* GazeTrackingViewController.swift in Sources */,
+				E74C35332672131300C80C74 /* PageCornerView.swift in Sources */,
 				E7C2793B266FC93200A40436 /* CalibrationModel.swift in Sources */,
+				E74C352F267212BC00C80C74 /* BookViewModel.swift in Sources */,
 				E7F09F7C266BFEF6005EE640 /* VisualPazerApp.swift in Sources */,
 				E7C27955266FD12700A40436 /* ViewerSettingView.swift in Sources */,
 				E7C2794A266FD08A00A40436 /* BookInfoView.swift in Sources */,
