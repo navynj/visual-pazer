@@ -69,30 +69,52 @@ extension GazeTrackingViewController : GazeDelegate {
     func onGaze(gazeInfo: GazeInfo) {
         if self.tracker?.gazeTracker != nil && ((self.tracker?.gazeTracker!.isCalibrating()) != nil) {
             if gazeInfo.trackingState == .SUCCESS {
+                let x = CGFloat(gazeInfo.x)
+                let y = CGFloat(gazeInfo.y)
                 if ((self.tracker?.isFiltered) != nil) {
-                    tracker?.gazePoint.x = CGFloat(gazeInfo.x)
-                    tracker?.gazePoint.y = CGFloat(gazeInfo.y)
+                    tracker?.gazePoint.x = x
+                    tracker?.gazePoint.y = y
+                    toggleGazeNext(x, y)
+                    toggleGazePrev(x, y)
                 } else {
                     if self.tracker?.filterManager != nil && self.tracker!.filterManager!.filterValues(timestamp: gazeInfo.timestamp, val: [gazeInfo.x, gazeInfo.y]) {
                         let _xy = self.tracker!.filterManager!.getFilteredValues()
                         tracker?.gazePoint.x = CGFloat(_xy[0])
                         tracker?.gazePoint.y = CGFloat(_xy[1])
+                        toggleGazeNext(x, y)
+                        toggleGazePrev(x, y)
                     }
                 }
             }
+        }
+    }
+    
+    
+    func toggleGazeNext(_ x: CGFloat, _ y: CGFloat) {
+        if x > 700 || x >= 600 && y >= 800 {
+            tracker!.gazeNext = true
+        } else {
+            tracker!.gazeNext = false
+        }
+    }
+    func toggleGazePrev(_ x: CGFloat, _ y: CGFloat) {
+        if x < 50 || x <= 150 && y <= 100 {
+            tracker!.gazePrev = true
+        } else {
+            tracker!.gazePrev = false
         }
     }
 }
 
 extension GazeTrackingViewController : CalibrationDelegate {
     func onCalibrationProgress(progress: Double) {
-        tracker?.caliPoint.show = true
+        tracker?.calibration.start = true
         tracker?.gazePoint.show = false
     }
     
     func onCalibrationNextPoint(x: Double, y: Double) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.tracker?.caliPoint.center = CGPoint(x: CGFloat(x), y: CGFloat(y))
+            self.tracker?.calibration.point = CGPoint(x: CGFloat(x), y: CGFloat(y))
             if let result = self.tracker?.gazeTracker?.startCollectSamples() {
                 print("startCollectSamples : \(result)")
             }
@@ -101,7 +123,7 @@ extension GazeTrackingViewController : CalibrationDelegate {
     
     func onCalibrationFinished(calibrationData: [Double]) {
         print("Finished calibration")
-        tracker?.caliPoint.show = false
+        tracker?.calibration.start = false
         tracker?.gazePoint.show = true
     }
 }
