@@ -16,7 +16,7 @@ struct NavMenuView: View {
     @State var pageLength : Double = 100.0
     
     var sideMenuWidth : CGFloat = UIScreen.main.bounds.width * 0.44
-    var title : String = "책 제목"
+    var title : String
     
     var body: some View {
         // Navigator View
@@ -99,7 +99,7 @@ struct NavMenuView: View {
 
 struct NavMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        NavMenuView()
+        NavMenuView(title: "달러구트 꿈 백화점")
             .background(Color(UIColor.secondarySystemBackground))
     }
 }

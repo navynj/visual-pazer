@@ -10,6 +10,7 @@ import SwiftUI
 struct SideMenuView: View {
     
     @EnvironmentObject var sideMenu : SideMenuViewModel
+    @EnvironmentObject var navMenu : NavMenuViewModel
     
     let book : BookModel
     let sideMenuWidth : CGFloat = UIScreen.main.bounds.width * 0.44
@@ -21,6 +22,7 @@ struct SideMenuView: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         sideMenu.toggle()
+                        navMenu.toggle()
                     }
                 Rectangle()
                     .fill(Color(UIColor.secondarySystemBackground))
@@ -48,14 +50,14 @@ struct SideMenuView: View {
     }
 }
 
-struct SideMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        let bookModel : BookModel = BookModel(
-           cover: "test",
-           title: "공간의 미래",
-           author: "유현준 (지은이)"
-       )
-        SideMenuView(book: bookModel)
+//struct SideMenu_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let bookModel : BookModel = BookModel(
+//           cover: "test",
+//           title: "공간의 미래",
+//           author: "유현준 (지은이)"
+//       )
+//        SideMenuView(book: bookModel)
 //        .previewDevice("iPhone 12")
-    }
-}
+//    }
+//}

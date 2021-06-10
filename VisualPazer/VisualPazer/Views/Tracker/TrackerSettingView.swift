@@ -10,8 +10,6 @@ import SwiftUI
 struct TrackerSettingView : View {
     
     @EnvironmentObject var tracker : TrackerViewModel
-    @EnvironmentObject var navMenu : NavMenuViewModel
-    @EnvironmentObject var sideMenu : SideMenuViewModel
     
     var body : some View {
         VStack (alignment: .leading) {
@@ -38,11 +36,6 @@ struct TrackerSettingView : View {
             .onChange(of: tracker.isTracking, perform: { start in
                 if start {
                     tracker.startTracking()
-                    navMenu.toggle()
-                    sideMenu.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                        tracker.toggleGazePoint()
-                    })
                 } else {
                     tracker.stopTracking()
                 }
