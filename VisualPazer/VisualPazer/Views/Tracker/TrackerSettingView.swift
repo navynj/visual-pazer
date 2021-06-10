@@ -55,6 +55,7 @@ struct TrackerSettingView : View {
                     )
                     .onTapGesture {
                         tracker.toggleGazePoint()
+//                        tracker.cancleGazeToggleTask()
                     }
                 
                 Text("초기화")

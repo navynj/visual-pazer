@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PageCornerView: View {
+struct PageTurnerView: View {
     @Binding var gazeOn : Bool
     
     var body: some View {
@@ -21,8 +21,7 @@ struct PageCornerView: View {
                         endRadius: 1000
                     )
                 )
-                .frame(width: gazeOn ? 50 : 40,
-                       height: gazeOn ? 50 : 40)
+                .frame(width: gazeOn ? 50 : 40, height: gazeOn ? 50 : 40)
                 .shadow(color: .gray.opacity(0.3), radius: 10, x: -10, y: -5)
             PageCorner()
                 .fill(gazeOn ? Color("millieYellow") : Color.gray.opacity(0.2))
@@ -33,8 +32,7 @@ struct PageCornerView: View {
                         .frame(width: 20, height: 30),
                     alignment: .bottomTrailing
                 )
-                .frame(width: gazeOn ? 50 : 40,
-                       height: gazeOn ? 50 : 40)
+                .frame(width: gazeOn ? 50 : 40, height: gazeOn ? 50 : 40)
         }
         .frame(maxWidth: UIScreen.main.bounds.width / 2,
                alignment: .bottomTrailing)
@@ -67,8 +65,8 @@ struct PageCorner: Shape {
     }
 }
 
-struct PageCornerView_Previews: PreviewProvider {
+struct PageTurnerView_Previews: PreviewProvider {
     static var previews: some View {
-        PageCornerView(gazeOn: .constant(false))
+        PageTurnerView(gazeOn: .constant(false))
     }
 }

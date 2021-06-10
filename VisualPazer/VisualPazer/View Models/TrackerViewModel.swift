@@ -11,7 +11,7 @@ class TrackerViewModel: ObservableObject {
 
     @Published var isTracking : Bool = false
     @Published var gazePoint : GazeModel = GazeModel()
-    @Published var caliPoint : CalibrationModel = CalibrationModel()
+    @Published var calibration : CalibrationModel = CalibrationModel()
     @Published var gazeNext : Bool = false
     @Published var gazePrev : Bool = false
     
@@ -24,14 +24,13 @@ class TrackerViewModel: ObservableObject {
 
     func startTracking() {
         gazeTracker?.startTracking()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             self.toggleGazePoint()
         })
     }
 
     func stopTracking() {
         gazeTracker?.stopTracking()
-        gazePoint.show = true
     }
     
     func toggleGazePoint() {
@@ -47,6 +46,8 @@ class TrackerViewModel: ObservableObject {
         if let isStart = result {
             if !isStart {
                 print("Calibration Started faild.")
+            } else {
+                calibration.start = true
             }
         }
     }
