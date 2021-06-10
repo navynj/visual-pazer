@@ -14,14 +14,14 @@ struct PageView: View {
     @EnvironmentObject var navMenu : NavMenuViewModel
     @Binding var gazeNext : Bool
     @Binding var gazePrev : Bool
-    var h : Dis
+    var bookIndex : Int
     
     @State var fillYellow : Bool = false
     
     var body: some View {
         ZStack {
             background
-            Image(books.books[0].pages[books.currentIndex])
+            Image(books.books[bookIndex].pages[books.currentIndex])
                 .resizable()
                 .scaledToFit()
                 .overlay(
@@ -89,8 +89,8 @@ struct PageView: View {
     }
 }
 
-struct PageView_Previews: PreviewProvider {
-    static var previews: some View {
-        PageView(gazeNext: .constant(false), gazePrev: .constant(false))
-    }
-}
+//struct PageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PageView(gazeNext: .constant(false), gazePrev: .constant(false))
+//    }
+//}
