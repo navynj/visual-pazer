@@ -13,7 +13,7 @@ struct MainView: View {
     @ObservedObject var books : BookViewModel = BookViewModel()
     @ObservedObject var sideMenu : SideMenuViewModel = SideMenuViewModel()
     @ObservedObject var navMenu : NavMenuViewModel = NavMenuViewModel()
-    @State var bookIndex : Int = 1
+    @State var bookIndex : Int = 0
     
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct MainView: View {
             GazeTrackingControllor(tracker: tracker)
             
             // page
-            PageView(gazeNext: $tracker.gazeNext, gazePrev: $tracker.gazePrev)
+            PageView(gazeNext: $tracker.gazeNext, gazePrev: $tracker.gazePrev, bookIndex: bookIndex)
                 .environmentObject(books)
                 .environmentObject(navMenu)
             
