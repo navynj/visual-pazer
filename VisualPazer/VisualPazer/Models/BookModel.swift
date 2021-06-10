@@ -12,5 +12,5 @@ struct BookModel: Identifiable {
     let cover : String
     let title : String
     let author : String
-    let pages : [String] = []
+    let pages : [String]
 }
