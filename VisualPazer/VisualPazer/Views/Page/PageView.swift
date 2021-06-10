@@ -20,23 +20,23 @@ struct PageView: View {
     
     var body: some View {
         ZStack {
-            background
+//            background
             Image(books.books[bookIndex].pages[books.currentIndex])
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .overlay(
                     touchArea
                 )
                 // gaze next
                 .overlay(
-                    PageTurnerView(gazeOn : $gazeNext)
+                    PageTurnerView(gazeOn : $gazeNext, pageTurn: {books.nextPage()})
 //                        .onAppear(perform: turnNext)
                     ,
                     alignment: .bottomTrailing
                 )
                 // gaze prev
                 .overlay(
-                    PageTurnerView(gazeOn : $gazePrev)
+                    PageTurnerView(gazeOn : $gazePrev, pageTurn: {books.prevPage()})
                         .rotationEffect(Angle(degrees: 180)),
                     alignment: .topLeading
                 )

@@ -31,11 +31,8 @@ struct PageTurningView: View {
                             withAnimation(Animation.timingCurve(0.6, 0.4, 0.8, 0.35, duration: duration)) {
                                 self.fillColor = true
                             }
-//                            DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: pageTurn)
                             Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { timer in
-                                print("in timer..")
                                 if onGaze {
-                                    print("TURN!")
                                     pageTurn()
                                 }
                                 timer.invalidate()

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct PageTurnerView: View {
     @Binding var gazeOn : Bool
+    @State var fillColor : Bool = false
+    let pageTurn : () -> ()
+    let duration : Double = 1.0
     
     var body: some View {
         ZStack {
@@ -21,21 +24,43 @@ struct PageTurnerView: View {
                         endRadius: 1000
                     )
                 )
-                .frame(width: gazeOn ? 50 : 40, height: gazeOn ? 50 : 40)
+                .frame(width: gazeOn ? 70 : 40, height: gazeOn ? 70 : 40)
                 .shadow(color: .gray.opacity(0.3), radius: 10, x: -10, y: -5)
-            PageCorner()
-                .fill(gazeOn ? Color("millieYellow") : Color.gray.opacity(0.2))
-                .overlay(
-                    Image(systemName: "arrow.right")
-                        .font(gazeOn ? .title3 : .subheadline)
-                        .foregroundColor(gazeOn ? .black.opacity(0.7) : .black.opacity(0.4))
-                        .frame(width: 20, height: 30),
-                    alignment: .bottomTrailing
-                )
-                .frame(width: gazeOn ? 50 : 40, height: gazeOn ? 50 : 40)
+            ZStack {
+                PageCorner()
+                    .fill(Color.gray.opacity(0.2))
+                    .overlay(
+                        Image(systemName: "arrow.right")
+                            .font(gazeOn ? .title3 : .subheadline)
+                            .foregroundColor(gazeOn ? .black.opacity(0.7) : .black.opacity(0.4))
+                            .frame(width: gazeOn ? 30 : 20, height: gazeOn ? 20 : 30),
+                        alignment: .bottomTrailing
+                    )
+                if gazeOn {
+                    PageCorner()
+                        .fill(Color("millieYellow"))
+                        .frame(maxHeight: fillColor ? .infinity : 0)
+                        .onAppear {
+                            withAnimation(Animation.timingCurve(0.6, 0.4, 0.8, 0.35, duration: duration)) {
+                                self.fillColor = true
+                            }
+                            Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { timer in
+                                if gazeOn {
+                                    pageTurn()
+                                }
+                                timer.invalidate()
+                            }
+                        }
+                        .onDisappear {
+                            self.fillColor = false
+                        }
+                }
+            }
+            .frame(width: gazeOn ? 70 : 40, height: gazeOn ? 70 : 40)
         }
         .frame(maxWidth: UIScreen.main.bounds.width / 2,
                alignment: .bottomTrailing)
+        .animation(.easeIn(duration: duration))
     }
 }
 
@@ -65,8 +90,8 @@ struct PageCorner: Shape {
     }
 }
 
-struct PageTurnerView_Previews: PreviewProvider {
-    static var previews: some View {
-        PageTurnerView(gazeOn: .constant(false))
-    }
-}
+//struct PageTurnerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PageTurnerView(gazeOn: .constant(false))
+//    }
+//}
